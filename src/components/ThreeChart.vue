@@ -2,6 +2,7 @@
 import {onMounted, reactive, ref} from "vue";
 import {treeChart} from "@/utils/threeChart";
 import type {IHierarchy} from "@/types/dataTypes";
+import NodePopup from "@/components/NodeInfoPopup.vue";
 
 const props = defineProps<{
   data: ReadonlyArray<IHierarchy>
@@ -9,10 +10,9 @@ const props = defineProps<{
 
 const treeContainer = ref<HTMLElement | null>(null);
 const showPopup = (name: string, description: string) => {
-  console.log(name, description)
-  // popupData.name = name;
-  // popupData.description = description;
-  // popupVisible.value = true;
+  popupData.name = name;
+  popupData.description = description;
+  popupVisible.value = true;
 };
 const popupData = reactive({
   name: '',
@@ -28,11 +28,11 @@ const popupVisible = ref(false);
 
 <template>
   <div ref="treeContainer"></div>
-<!--  <NodePopup-->
-<!--      :visible="popupVisible"-->
-<!--      :name="popupData.name"-->
-<!--      :description="popupData.description"-->
-<!--      @close="popupVisible = false"-->
-<!--  />-->
+  <NodePopup
+      :visible="popupVisible"
+      :name="popupData.name"
+      :description="popupData.description"
+      @close="popupVisible = false"
+  />
 </template>
 <style scoped></style>
