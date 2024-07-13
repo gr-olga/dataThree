@@ -35,4 +35,21 @@ const popupVisible = ref(false);
       @close="popupVisible = false"
   />
 </template>
-<style scoped></style>
+<style scoped>
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+.node rect {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+  text-anchor: middle;
+}
+</style>

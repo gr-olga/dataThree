@@ -4,7 +4,7 @@ import type {HierarchyNode} from "d3";
 
 export function treeChart(container: HTMLElement, data: ReadonlyArray<IHierarchy>, onClick: (name: string, description: string) => void) {
     const width: number = 600;
-    const height : number= 400;
+    const height: number = 400;
 
     const treeLayout = d3.tree().size([height, width - 160]);
 

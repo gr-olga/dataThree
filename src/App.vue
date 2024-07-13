@@ -9,12 +9,17 @@ const hierarchicalData = createHierarchy(data.value);
 </script>
 
 <template>
-  <div>
+  <div class="app">
     <h2>Data Chart</h2>
     <TreeChart :data="hierarchicalData"/>
   </div>
 </template>
 
 <style scoped>
-
+.app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
