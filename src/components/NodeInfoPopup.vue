@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import {defineEmits, defineProps} from 'vue';
+import { defineEmits, defineProps } from 'vue'
 
 const props = defineProps<{
-  visible: boolean,
-  name: string,
+  visible: boolean
+  name: string
   description: string
-}>();
+}>()
 
-const emit = defineEmits(['close']);
+const emit = defineEmits(['close'])
 
 const closePopup = () => {
-  emit('close');
-};
+  emit('close')
+}
 </script>
 <template>
   <div v-if="visible" class="popup">
@@ -22,7 +22,6 @@ const closePopup = () => {
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .popup {
