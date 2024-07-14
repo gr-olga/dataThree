@@ -9,11 +9,13 @@ const props = defineProps<{
 }>();
 
 const treeContainer = ref<HTMLElement | null>(null);
+
 const showPopup = (name: string, description: string) => {
   popupData.name = name;
   popupData.description = description;
   popupVisible.value = true;
 };
+
 const popupData = reactive({
   name: '',
   description: ''
@@ -35,21 +37,3 @@ const popupVisible = ref(false);
     @close="popupVisible = false"
   />
 </template>
-<style>
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 2px;
-}
-
-.node rect {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 3px;
-}
-
-.node text {
-  font: 12px sans-serif;
-  text-anchor: middle;
-}
-</style>
