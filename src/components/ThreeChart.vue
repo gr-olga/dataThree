@@ -29,7 +29,7 @@ const popupVisible = ref(false);
 </script>
 
 <template>
-  <div ref="treeContainer"></div>
+  <div ref="treeContainer"/>
   <NodePopup
     :visible="popupVisible"
     :name="popupData.name"
