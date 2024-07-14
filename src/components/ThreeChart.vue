@@ -5,7 +5,7 @@ import type { IHierarchy } from '@/types/dataTypes'
 import NodePopup from '@/components/NodeInfoPopup.vue'
 
 const props = defineProps<{
-  data: ReadonlyArray<IHierarchy>
+  data: IHierarchy
 }>()
 
 const treeContainer = ref<HTMLElement | null>(null)

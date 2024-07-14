@@ -4,7 +4,7 @@ import * as d3 from 'd3'
 
 export function treeChart(
   container: HTMLElement,
-  data: ReadonlyArray<IHierarchy>,
+  rootElement: IHierarchy,
   onClick: (name: string, description: string) => void
 ) {
   const width: number = 600
@@ -12,7 +12,7 @@ export function treeChart(
 
   const treeLayout = d3.tree<IHierarchy>().size([height, width - 160])
 
-  const root: HierarchyPointNode<IHierarchy> = treeLayout(d3.hierarchy<IHierarchy>(data[0]))
+  const root: HierarchyPointNode<IHierarchy> = treeLayout(d3.hierarchy<IHierarchy>(rootElement))
 
   const svg = d3.select(container).append('svg').attr('width', width).attr('height', height)
 
