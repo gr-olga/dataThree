@@ -1,9 +1,9 @@
-import type { IHierarchy } from '@/types/dataTypes'
+import type { IHierarchy } from '@/types/dataTypes';
 
 const hasParent = (item: IHierarchy): boolean => item.parent !== '';
 const hasNoParent = (item: IHierarchy): boolean => !hasParent(item);
-const findParent = (items: ReadonlyArray<IHierarchy>, parentName: string): IHierarchy | undefined => items.find((item: IHierarchy) => parentName === item.name);
-
+const findParent = (items: ReadonlyArray<IHierarchy>, parentName: string): IHierarchy | undefined =>
+  items.find((item: IHierarchy) => parentName === item.name);
 
 export function createHierarchy(items: ReadonlyArray<IHierarchy>): IHierarchy | never {
   const itemMap: Map<string, IHierarchy> = new Map();

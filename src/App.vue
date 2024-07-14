@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { createHierarchy } from '@/utils/createHierarchy'
-import mockData from '@/mockData/mockData.json'
-import TreeChart from '@/components/ThreeChart.vue'
-import type {IHierarchy} from "@/types/dataTypes";
+import { ref } from 'vue';
+import { createHierarchy } from '@/utils/createHierarchy';
+import mockData from '@/mockData/mockData.json';
+import TreeChart from '@/components/ThreeChart.vue';
+import type { IHierarchy } from '@/types/dataTypes';
 
-const data = ref(mockData.data)
-const hierarchicalData: IHierarchy = createHierarchy(data.value)
+const data = ref(mockData.data);
+const hierarchicalData: IHierarchy = createHierarchy(data.value);
 </script>
 
 <template>
