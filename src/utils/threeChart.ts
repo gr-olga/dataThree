@@ -62,8 +62,8 @@ export function treeChart(
 
     function centerNode(source: HierarchyPointNode<IHierarchy>) {
         const t = d3.zoomTransform(svg.node()!);
-        const x = -source.y * t.k + width / 2;
-        const y = -source.x * t.k + height / 2;
+        const x: number = -source.y * t.k + width / 2;
+        const y: number = -source.x * t.k + height / 2;
         svg.transition()
             .duration(750)
             .call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(t.k));
@@ -72,8 +72,6 @@ export function treeChart(
     const zoom = d3.zoom<SVGSVGElement, unknown>().on('zoom', (event) => {
         g.attr('transform', event.transform.toString());
     });
-
-    svg.call(zoom);
 
     function highlightNode(selectedNode: HierarchyPointNode<IHierarchy>) {
         node.selectAll('rect').style('fill', 'white');
